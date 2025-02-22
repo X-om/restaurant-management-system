@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.rms.LayoutController">
+   <left>
+      <StackPane stylesheets="@css/layout.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="drawer" maxWidth="300.0" minWidth="80.0" prefWidth="80.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="80.0">
+                     <children>
+                        <HBox fx:id="menuButton" alignment="CENTER_LEFT" onMouseClicked="#toggleDrawer">
+                           <children>
+                              <StackPane maxWidth="80.0" prefWidth="80.0">
+                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@images/burger.png" />
+                                    </image>
+                                 </ImageView>
+                              </StackPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox maxWidth="300.0" minWidth="80.0" prefWidth="80.0" spacing="50.0">
+                     <children>
+                        <StackPane styleClass="sidebar-item-container">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <StackPane maxWidth="80.0" minWidth="80.0" prefWidth="80.0">
+                                       <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@images/TABEL.png" />
+                                          </image>
+                                       </ImageView>
+                                    </StackPane>
+                                    <StackPane>
+                                       <Label fx:id="dashboardLabel" text="Dashboard" visible="false">
+                                          <font>
+                                             <Font name="Arial Italic" size="24.0" />
+                                          </font>
+                                          <padding>
+                                             <Insets left="15.0" />
+                                          </padding>
+                                       </Label>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <clip>
+                              <Rectangle height="60.0" width="80.0" />
+                           </clip>
+                        </StackPane>
+                        <!-- Repeat similar structure for other menu items -->
+                        <StackPane styleClass="sidebar-item-container">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <StackPane maxWidth="80.0" minWidth="80.0" prefWidth="80.0">
+                                       <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@images/HISTORY.png" />
+                                          </image>
+                                       </ImageView>
+                                    </StackPane>
+                                    <StackPane>
+                                       <Label fx:id="orderLabel" text="Orders" visible="false">
+                                          <font>
+                                             <Font name="Arial Italic" size="24.0" />
+                                          </font>
+                                          <padding>
+                                             <Insets left="15.0" />
+                                          </padding>
+                                       </Label>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <clip>
+                              <Rectangle height="60.0" width="80.0" />
+                           </clip>
+                        </StackPane>
+                        <StackPane styleClass="sidebar-item-container">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <StackPane maxWidth="80.0" minWidth="80.0" prefWidth="80.0">
+                                       <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@images/REPORT.png" />
+                                          </image>
+                                       </ImageView>
+                                    </StackPane>
+                                    <StackPane>
+                                       <Label fx:id="reportLabel" text="Reports" visible="false">
+                                          <font>
+                                             <Font name="Arial Italic" size="24.0" />
+                                          </font>
+                                          <padding>
+                                             <Insets left="15.0" />
+                                          </padding>
+                                       </Label>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <clip>
+                              <Rectangle height="60.0" width="80.0" />
+                           </clip>
+                        </StackPane>
+                        <StackPane styleClass="sidebar-item-container">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <StackPane maxWidth="80.0" minWidth="80.0" prefWidth="80.0">
+                                       <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@images/SETTINGS.png" />
+                                          </image>
+                                       </ImageView>
+                                    </StackPane>
+                                    <StackPane>
+                                       <Label fx:id="settingsLabel" text="Settings" visible="false">
+                                          <font>
+                                             <Font name="Arial Italic" size="24.0" />
+                                          </font>
+                                          <padding>
+                                             <Insets left="15.0" />
+                                          </padding>
+                                       </Label>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <clip>
+                              <Rectangle height="60.0" width="80.0" />
+                           </clip>
+                        </StackPane>
+                        <StackPane styleClass="sidebar-item-container">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <StackPane maxWidth="80.0" minWidth="80.0" prefWidth="80.0">
+                                       <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@images/SUPPORT.png" />
+                                          </image>
+                                       </ImageView>
+                                    </StackPane>
+                                    <StackPane>
+                                       <Label fx:id="supportLabel" text="Help &amp; Support" visible="false">
+                                          <font>
+                                             <Font name="Arial Italic" size="24.0" />
+                                          </font>
+                                          <padding>
+                                             <Insets left="15.0" />
+                                          </padding>
+                                       </Label>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <clip>
+                              <Rectangle height="60.0" width="80.0" />
+                           </clip>
+                        </StackPane>
+                        <StackPane styleClass="logout-item-container">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <StackPane maxWidth="80.0" minWidth="80.0" prefWidth="80.0">
+                                       <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@images/LOGOUT.png" />
+                                          </image>
+                                       </ImageView>
+                                    </StackPane>
+                                    <StackPane>
+                                       <Label fx:id="logoutLabel" text="Log Out" visible="false">
+                                          <font>
+                                             <Font name="Arial Italic" size="24.0" />
+                                          </font>
+                                          <padding>
+                                             <Insets left="15.0" />
+                                          </padding>
+                                       </Label>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <clip>
+                              <Rectangle height="60.0" width="80.0" />
+                           </clip>
+                        </StackPane>
+
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </left>
+</BorderPane>

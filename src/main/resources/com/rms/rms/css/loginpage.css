@@ -1,0 +1,51 @@
+#leftSide {
+    -fx-background-radius: 0 50 50 0;
+    -fx-background-color: linear-gradient(from 0% 100% to 100% 0%, #1B1B4A, #A17FFF);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 50, 0, 20, 4);
+}
+
+
+#leftheading {
+    -fx-text-fill: #D1C0FF;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0, 0, 4);
+}
+
+
+#rightSide {
+    -fx-background-color: #F9F9F9;
+
+    /* Inner Shadow */
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.2), 25, 0, 4, 4);
+    -fx-background-radius: 50 ;
+}
+
+
+#loginButton {
+    -fx-background-color: linear-gradient(to bottom, #7B62CD, #5A47A2); /* Darker gradient */
+    -fx-background-radius: 30; /* Smooth rounded edges */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 25px;
+    -fx-cursor: hand;
+    -fx-border-color: rgba(255, 255, 255, 0.3); /* Soft white border */
+    -fx-border-width: 2px;
+    -fx-border-radius: 30;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 3);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+#loginButton:hover {
+    -fx-background-color: linear-gradient(to bottom, #9074E3, #7B62CD); /* Lighter hover effect */
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Click Effect */
+#loginButton:pressed {
+    -fx-background-color: #5A47A2; /* Deeper pressed color */
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.4), 12, 0, 0, 4);
+}
+
