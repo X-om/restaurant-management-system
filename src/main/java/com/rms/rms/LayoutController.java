@@ -2,15 +2,22 @@ package com.rms.rms;
 
 import javafx.animation.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+
+import java.io.IOException;
 import java.util.*;
 
 public class LayoutController {
+
+    @FXML
+    private BorderPane mainLayout;
+
 
     public Label dashboardLabel;
     public Label orderLabel;
@@ -131,5 +138,53 @@ public class LayoutController {
         });
 
         timeline.play();
+    }
+
+
+    private void setCenterContext(String fxmlPath){
+        try{
+            Region content = FXMLLoader.load(getClass().getResource(fxmlPath));
+
+            // Create a container for dynamic sizing
+            StackPane container = new StackPane(content);
+
+            // Bind container size to available space
+            container.prefWidthProperty().bind(
+                    mainLayout.widthProperty()
+                            .subtract(drawer.widthProperty())
+            );
+
+            // Set alignment and fill behavior
+            StackPane.setAlignment(content, Pos.CENTER);
+            container.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+
+            mainLayout.setCenter(container);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void showDashboard(){
+        setCenterContext("dashboard.fxml");
+    }
+
+    @FXML
+    private void showOrders(){
+        setCenterContext("orders.fxml");
+    }
+
+    @FXML
+    private void showReports(){
+        setCenterContext("reports.fxml");
+    }
+
+    @FXML
+    private void showSettings(){
+        setCenterContext("settings.fxml");
+    }
+    @FXML
+    public void showSupport() {
+        setCenterContext("support.fxml");
     }
 }

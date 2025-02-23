@@ -1,0 +1,7 @@
+
+    #buttonsContainer {
+        -fx-background-color: white; /* Set a background */
+        -fx-background-radius: 10; /* Optional: Rounded corners */
+
+        -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 0);
+    }

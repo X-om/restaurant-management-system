@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.rms.LayoutController">
+<BorderPane fx:id="mainLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.rms.LayoutController">
    <left>
       <StackPane stylesheets="@css/layout.css" BorderPane.alignment="CENTER">
          <children>
@@ -37,7 +37,7 @@
                   </VBox>
                   <VBox maxWidth="300.0" minWidth="80.0" prefWidth="80.0" spacing="50.0">
                      <children>
-                        <StackPane styleClass="sidebar-item-container">
+                        <StackPane onMouseClicked="#showDashboard" styleClass="sidebar-item-container">
                            <children>
                               <HBox alignment="CENTER_LEFT">
                                  <children>
@@ -64,9 +64,11 @@
                            <clip>
                               <Rectangle height="60.0" width="80.0" />
                            </clip>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
                         </StackPane>
-                        <!-- Repeat similar structure for other menu items -->
-                        <StackPane styleClass="sidebar-item-container">
+                        <StackPane onMouseClicked="#showOrders" styleClass="sidebar-item-container">
                            <children>
                               <HBox alignment="CENTER_LEFT">
                                  <children>
@@ -93,8 +95,11 @@
                            <clip>
                               <Rectangle height="60.0" width="80.0" />
                            </clip>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
                         </StackPane>
-                        <StackPane styleClass="sidebar-item-container">
+                        <StackPane onMouseClicked="#showReports" styleClass="sidebar-item-container">
                            <children>
                               <HBox alignment="CENTER_LEFT">
                                  <children>
@@ -121,8 +126,11 @@
                            <clip>
                               <Rectangle height="60.0" width="80.0" />
                            </clip>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
                         </StackPane>
-                        <StackPane styleClass="sidebar-item-container">
+                        <StackPane onMouseClicked="#showSettings" styleClass="sidebar-item-container">
                            <children>
                               <HBox alignment="CENTER_LEFT">
                                  <children>
@@ -149,8 +157,11 @@
                            <clip>
                               <Rectangle height="60.0" width="80.0" />
                            </clip>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
                         </StackPane>
-                        <StackPane styleClass="sidebar-item-container">
+                        <StackPane onMouseClicked="#showSupport" styleClass="sidebar-item-container">
                            <children>
                               <HBox alignment="CENTER_LEFT">
                                  <children>
@@ -177,6 +188,9 @@
                            <clip>
                               <Rectangle height="60.0" width="80.0" />
                            </clip>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
                         </StackPane>
                         <StackPane styleClass="logout-item-container">
                            <children>
@@ -205,6 +219,9 @@
                            <clip>
                               <Rectangle height="60.0" width="80.0" />
                            </clip>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
                         </StackPane>
 
                      </children>
