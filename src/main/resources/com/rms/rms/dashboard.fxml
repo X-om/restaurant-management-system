@@ -41,7 +41,7 @@
                   </HBox>
                </children>
             </AnchorPane>
-            <AnchorPane maxHeight="-Infinity" prefHeight="790.0" prefWidth="1140.0">
+            <AnchorPane prefHeight="790.0" prefWidth="1140.0">
                <children>
                   <ScrollPane fitToHeight="false" fitToWidth="true" hbarPolicy="NEVER" prefHeight="790.0" prefWidth="1140.0" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                      <content>

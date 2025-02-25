@@ -1,7 +1,16 @@
+#buttonsContainer {
+    -fx-background-color: white; /* Set a background */
+    -fx-background-radius: 10; /* Optional: Rounded corners */
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 0);
+}
 
-    #buttonsContainer {
-        -fx-background-color: white; /* Set a background */
-        -fx-background-radius: 10; /* Optional: Rounded corners */
+.table-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 4);
+}
 
-        -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 0);
-    }
+.table-card:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 0, 6);
+}
