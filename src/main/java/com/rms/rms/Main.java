@@ -1,6 +1,5 @@
 package com.rms.rms;
 
-import com.rms.rms.database.DatabaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
