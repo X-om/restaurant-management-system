@@ -142,7 +142,7 @@ public class LayoutController {
 
     private void setCenterContext(String fxmlPath){
         try{
-            Region content = FXMLLoader.load(getClass().getResource(fxmlPath));
+            Region content = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxmlPath)));
 
             // Create a container for dynamic sizing
             StackPane container = new StackPane(content);

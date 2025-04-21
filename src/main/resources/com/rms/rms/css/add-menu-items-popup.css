@@ -1,0 +1,79 @@
+/* add-menu-items-popup.css */
+
+/* Root and background styles */
+.addItemMain {
+    -fx-background-color: #ffffff;
+}
+
+/* Header style */
+.header-box {
+    -fx-background-color: #4D3F76;
+}
+
+.header-label {
+    -fx-text-fill: white;
+    -fx-font-family: "Tiro Tamil";
+    -fx-font-size: 36px;
+}
+
+/* Center card style */
+.center-card {
+    -fx-background-color: #D9D9D9;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 2);
+    -fx-padding: 20;
+}
+
+/* Form labels */
+.form-label {
+    -fx-font-family: "Arial Rounded MT Bold";
+    -fx-font-size: 16px;
+}
+
+/* Text fields */
+.text-field {
+    -fx-background-radius: 5;
+    -fx-background-color: white;
+}
+
+/* Menu button */
+.menu-button {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 5;
+}
+
+/* Add Item button - special styling */
+#addItemButton {
+    -fx-background-radius: 20;
+    -fx-background-color: #FD5F5C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#addItemButton:hover {
+    -fx-background-color: #ff3f3c;
+    -fx-effect: dropshadow(gaussian, rgba(253,95,92,0.5), 10, 0.5, 0, 0);
+}
+
+#addItemButton:pressed {
+    -fx-background-color: #e53f3c;
+    -fx-translate-y: 1px;
+}
+
+/* Close button - basic styling */
+#closeButton {
+    -fx-background-radius: 20;
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #333333;
+    -fx-cursor: hand;
+}
+
+#closeButton:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+/* Background pane */
+.background-pane {
+    -fx-background-color: #F2F2F2;
+}

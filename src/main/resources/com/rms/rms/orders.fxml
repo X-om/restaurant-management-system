@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/23.0.1"
-           xmlns:fx="http://javafx.com/fxml/1">
-   <Label text="Orders">
-      <font>
-         <Font name="Arial Bold Italic" size="72.0" />
-      </font>
-   </Label>
+<StackPane stylesheets="@css/orders.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.rms.OrderController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1140.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #4D3F76;">
+               <children>
+                  <Label text="Orders" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="49.0" style="-fx-background-color: #9FA3A9;" />
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <VBox fx:id="ordersContainer" fillWidth="true" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
 </StackPane>

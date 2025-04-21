@@ -1,0 +1,20 @@
+/* Bill Table Styling */
+.bill-table {
+    -fx-font-size: 14px;
+}
+
+.bill-table .column-header {
+    -fx-font-weight: bold;
+    -fx-background-color: #4D3F76;
+    -fx-text-fill: white;
+}
+
+.bill-table .table-row-cell:odd {
+    -fx-background-color: #f8f8f8;
+}
+
+.grand-total {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4D3F76;
+}

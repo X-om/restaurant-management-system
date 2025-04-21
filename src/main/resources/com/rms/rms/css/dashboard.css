@@ -1,16 +1,46 @@
-#buttonsContainer {
-    -fx-background-color: white; /* Set a background */
-    -fx-background-radius: 10; /* Optional: Rounded corners */
-    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 0);
-}
+ #buttonsContainer {
+     -fx-background-color: white;
+     -fx-background-radius: 10;
+     -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 0);
+ }
 
-.table-card {
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 20;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 4);
-}
+ /* Base card styling for all tables */
+ .table-card {
+     -fx-background-radius: 20;
+     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 4);
+     -fx-border-radius: 20;
+     -fx-border-width: 2px;
+     -fx-border-color: transparent;
+     -fx-background-color: #FFFFFF; /* Default background */
+ }
 
-.table-card:hover {
-    -fx-background-color: #f0f0f0;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 0, 6);
-}
+ /* Hover effect for all cards */
+ .table-card:hover {
+     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 0, 6);
+ }
+
+ /* Available table specific styling */
+ .available-table-card {
+     -fx-background-color: #FFFFFF;
+     -fx-border-color: transparent;
+ }
+
+ /* Occupied table specific styling */
+ .occupied-table-card {
+     -fx-background-color: #e8f5e9;
+     -fx-border-color: #66bb6a;
+ }
+
+ /* Status indicator text */
+ .status-indicator {
+     -fx-font-size: 14px;
+     -fx-font-weight: bold;
+ }
+
+ .available-status {
+     -fx-text-fill: #666666;
+ }
+
+ .occupied-status {
+     -fx-text-fill: #2e7d32;
+ }

@@ -7,5 +7,6 @@ module com.rms.rms {
 
     opens com.rms.rms to javafx.fxml;
     exports com.rms.rms;
+    exports com.rms.rms.models;
 
 }

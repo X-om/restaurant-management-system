@@ -1,0 +1,33 @@
+.left-containers {
+     -fx-background-color: #ffffff; /* Or any color */
+     -fx-effect: innershadow(gaussian, rgba(0,0,0,0.3), 4, 0.0, 0, 4);
+}
+.drop-shadow-effect {
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0.0, 0, 4);
+}
+
+.quantity-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0.5, 0, 2);
+    -fx-border-radius: 5;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-spacing: 20;
+}
+
+
+.quantity-button {
+    -fx-min-width: 25;
+    -fx-min-height: 25;
+    -fx-background-radius: 15;
+    -fx-background-color: #4D3F76;
+    -fx-text-fill: white;
+}
+
+.quantity-button:hover {
+    -fx-background-color: #63548B;
+}
+
