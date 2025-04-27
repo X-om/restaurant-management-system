@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -42,6 +43,7 @@ public class DashboardController {
         tablesContainer.setCacheHint(javafx.scene.CacheHint.SPEED);
     }
 
+    @FXML
     void restoreTables() {
         if (!cachedTables.isEmpty()) {
             refreshUI();
@@ -140,7 +142,7 @@ public class DashboardController {
             }
         });
 
-
+        pane2.setOpacity(pane2.isDisabled() ? 0.5 : 1.0);
 
         hBox.getChildren().addAll(pane1, pane2);
         return hBox;
@@ -235,5 +237,36 @@ public class DashboardController {
         });
 
         new Thread(task).start();
+    }
+
+    @FXML
+    private void showMenuPopUp() {
+        try {
+            // Load the FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu-popup.fxml"));
+            Parent root = loader.load();
+
+            // Create the dialog
+            Stage dialog = new Stage();
+            dialog.setTitle("Menu Selection");
+            dialog.initModality(Modality.APPLICATION_MODAL);
+            dialog.initOwner(tablesContainer.getScene().getWindow());
+
+            // Set the scene
+            Scene scene = new Scene(root);
+            dialog.setScene(scene);
+
+
+            // Show the dialog
+            dialog.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Could not load menu popup");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        }
     }
 }

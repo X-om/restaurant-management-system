@@ -51,6 +51,97 @@ public class DatabaseManager {
         });
     }
 
+    public static void createUsersTable(){
+        String sql = "CREATE TABLE IF NOT EXISTS users (" +
+                "id SERIAL PRIMARY KEY," +
+                "name VARCHAR(255) NOT NULL," +
+                "username VARCHAR(255) NOT NULL UNIQUE," +
+                "password VARCHAR(255) NOT NULL)";
+
+        try(Connection conn = getConnection(); Statement stmt = conn.createStatement()){
+                stmt.executeUpdate(sql);
+                System.out.println("user table creation is successfully");
+
+        } catch (SQLException e){
+            System.err.println("Error creating users table " + e.getMessage());
+            throw new RuntimeException("Table creation failed");
+        }
+    }
+    public static boolean usernameExists(String username) {
+        String sql = "SELECT username FROM users WHERE username = ?";
+
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, username);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next();
+
+        } catch (SQLException e) {
+            System.err.println("Error checking username: " + e.getMessage());
+            return true; // Prevent creation on error
+        }
+    }
+
+    public static boolean insertUserInfo(String name, String username, String password) {
+        String sql = "INSERT INTO users (name, username, password) VALUES (?, ?, ?)";
+
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, name);
+            pstmt.setString(2, username);
+            pstmt.setString(3, password);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            System.err.println("Error inserting user: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean checkUsernameExists(String username) {
+        String sql = "SELECT username FROM users WHERE username = ?";
+
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, username);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next();
+
+        } catch (SQLException e) {
+            System.err.println("Username check error: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean verifyPassword(String username, String inputPassword) {
+        String sql = "SELECT password FROM users WHERE username = ?";
+
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, username);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                String storedPassword = rs.getString("password");
+
+                return storedPassword.equals(inputPassword);
+
+            }
+            return false;
+
+        } catch (SQLException e) {
+            System.err.println("Password verification error: " + e.getMessage());
+            return false;
+        }
+    }
+
+
+
     // Menu Table Operations
     public static void createMenuTable() {
         String createTableSQL = "CREATE TABLE IF NOT EXISTS menu (" +
@@ -74,21 +165,41 @@ public class DatabaseManager {
         }
     }
 
-    public static void createOrderTable(){
+    public static void createOrderTable() {
         String createOrderTableSQL = "CREATE TABLE IF NOT EXISTS orders (" +
                 "order_id SERIAL PRIMARY KEY," +
                 "order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP," +
                 "total_price DECIMAL(10,2) NOT NULL," +
-                "table_number INT REFERENCES tables(table_number) )";
+                "table_number INT REFERENCES tables(table_number)," +  // <-- Added comma here
+                "status VARCHAR(20) DEFAULT 'active' CHECK (status IN ('active', 'completed', 'cancelled'))" +
+                ")";
 
-        try(Connection conn = getConnection();
-            Statement stmt = conn.createStatement()){
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(createOrderTableSQL);
             System.out.println("Order Table created");
+        } catch (SQLException e) {
+            System.err.println("Error creating order table: " + e.getMessage());
+            throw new RuntimeException("Order creation failed", e);
+        }
+    }
 
-        } catch (SQLException e){
-            System.err.println("Error creating menu table " + e.getMessage());
-            throw  new RuntimeException("Order creation failed");
+    public static void completeOrder(int tableNumber) throws SQLException {
+        String sql = "UPDATE orders SET status = 'completed' " +
+                "WHERE table_number = ? AND status = 'active'";
+
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, tableNumber);
+            stmt.executeUpdate();
+        }
+
+        // Also update table status
+        sql = "UPDATE tables SET status = 'available' WHERE table_number = ?";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, tableNumber);
+            stmt.executeUpdate();
         }
     }
 
@@ -207,6 +318,33 @@ public class DatabaseManager {
             }
         }
         return details;
+    }
+
+    public static List<OrderDetail> getActiveOrderDetails(int tableNumber) throws SQLException {
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        String sql = "SELECT m.foodName, m.foodSection, oi.quantity, oi.item_price " +
+                "FROM order_items oi " +
+                "JOIN menu m ON oi.menu_item_id = m.id " +
+                "JOIN orders o ON oi.order_id = o.order_id " +
+                "WHERE o.table_number = ? AND o.status = 'active' " +
+                "ORDER BY o.order_date DESC";  // Removed LIMIT 1
+
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, tableNumber);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    orderDetails.add(new OrderDetail(
+                            rs.getString("foodName"),
+                            rs.getString("foodSection"),
+                            rs.getInt("quantity"),
+                            rs.getDouble("item_price")
+                    ));
+                }
+            }
+        }
+        return orderDetails;
     }
 
     public static int insertMenuItem(String name, String section, double price) {

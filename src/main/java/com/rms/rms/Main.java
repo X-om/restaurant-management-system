@@ -16,6 +16,7 @@ public class Main extends Application {
 
     @Override
     public void init() throws Exception {
+        DatabaseManager.createUsersTable();
         DatabaseManager.createMenuTable();
         DatabaseManager.createTablesTable();
         DatabaseManager.createOrderTable();

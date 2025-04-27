@@ -31,3 +31,25 @@
     -fx-background-color: #63548B;
 }
 
+.card-button {
+    -fx-background-color: #4d3f76;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 15px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-margin: 0 20px;
+    -fx-alignment: center;
+    -fx-pref-width: 240px;
+    -fx-pref-height: 38px;
+    -fx-margin: 15px 20px 0 20px;
+}
+
+.card-button:hover {
+    -fx-background-color: #3d3260;
+}
+
+.card-button:pressed {
+    -fx-background-color: #322752;
+}
+

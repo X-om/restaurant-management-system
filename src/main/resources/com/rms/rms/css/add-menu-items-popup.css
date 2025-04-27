@@ -1,79 +1,69 @@
-/* add-menu-items-popup.css */
+/* Add to existing settings.css */
 
-/* Root and background styles */
-.addItemMain {
-    -fx-background-color: #ffffff;
-}
-
-/* Header style */
-.header-box {
-    -fx-background-color: #4D3F76;
-}
-
-.header-label {
-    -fx-text-fill: white;
-    -fx-font-family: "Tiro Tamil";
-    -fx-font-size: 36px;
-}
-
-/* Center card style */
-.center-card {
-    -fx-background-color: #D9D9D9;
-    -fx-background-radius: 20;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 2);
-    -fx-padding: 20;
-}
-
-/* Form labels */
-.form-label {
-    -fx-font-family: "Arial Rounded MT Bold";
-    -fx-font-size: 16px;
-}
-
-/* Text fields */
+/* Form Elements */
 .text-field {
-    -fx-background-radius: 5;
     -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-color: #eeeeee;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1.5px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 12px;
+    -fx-pref-height: 40px;
 }
 
-/* Menu button */
+.text-field:focused {
+    -fx-border-color: #4d3f76;
+}
+
 .menu-button {
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 5;
-}
-
-/* Add Item button - special styling */
-#addItemButton {
-    -fx-background-radius: 20;
-    -fx-background-color: #FD5F5C;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-cursor: hand;
-}
-
-#addItemButton:hover {
-    -fx-background-color: #ff3f3c;
-    -fx-effect: dropshadow(gaussian, rgba(253,95,92,0.5), 10, 0.5, 0, 0);
-}
-
-#addItemButton:pressed {
-    -fx-background-color: #e53f3c;
-    -fx-translate-y: 1px;
-}
-
-/* Close button - basic styling */
-#closeButton {
-    -fx-background-radius: 20;
-    -fx-background-color: #e0e0e0;
+    -fx-background-color: white;
     -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 12px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #eeeeee;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1.5px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #f0f0f5;
+}
+
+.menu-button .arrow-button {
+    -fx-padding: 0 5px 0 0;
+}
+
+.menu-button .label {
+    -fx-text-fill: #333333;
+}
+
+/* Success Message */
+.success-message {
+    -fx-text-fill: #23d000;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Button Styles (already in your settings.css) */
+.card-button {
+    -fx-background-color: #4d3f76;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 15px;
+    -fx-background-radius: 5px;
     -fx-cursor: hand;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 38px;
 }
 
-#closeButton:hover {
-    -fx-background-color: #d0d0d0;
+.card-button:hover {
+    -fx-background-color: #3d3260;
 }
 
-/* Background pane */
-.background-pane {
-    -fx-background-color: #F2F2F2;
+.card-button:pressed {
+    -fx-background-color: #322752;
 }

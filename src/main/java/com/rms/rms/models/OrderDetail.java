@@ -4,21 +4,21 @@ public class OrderDetail {
     private final String foodName;
     private final String foodSection;
     private final int quantity;
-    private final double unitPrice;
+    private final double itemPrice;
 
-    public OrderDetail(String foodName, String foodSection, int quantity, double unitPrice) {
+    public OrderDetail(String foodName, String foodSection, int quantity, double itemPrice) {
         this.foodName = foodName;
         this.foodSection = foodSection;
         this.quantity = quantity;
-        this.unitPrice = unitPrice;
+        this.itemPrice = itemPrice;
     }
 
     public double getTotalPrice() {
-        return quantity * unitPrice;
+        return quantity * itemPrice;
     }
 
-    public double getUnitPrice(){
-        return unitPrice;
+    public double getItemPrice(){
+        return itemPrice;
     }
 
     public String getFoodName(){

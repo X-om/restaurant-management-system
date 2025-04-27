@@ -1,6 +1,7 @@
 package com.rms.rms;
 
 import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -65,6 +66,7 @@ public class LayoutController {
             }
         });
 
+        logoutLabel.setOnMouseClicked(e -> handleLogout());
         timeline = new Timeline();
     }
 
@@ -161,6 +163,11 @@ public class LayoutController {
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void handleLogout(){
+        Platform.exit();
     }
 
     @FXML

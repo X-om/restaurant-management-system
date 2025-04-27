@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="15" styleClass="popup-container" stylesheets="@css/menu-popup.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.rms.MenuPopupController">
+
+
+    <Label styleClass="popup-title" text="Menu Selection" />
+
+    <HBox alignment="CENTER_LEFT" spacing="15" styleClass="section-container">
+        <Label styleClass="section-label" text="Select Food Section:" />
+        <ComboBox fx:id="sectionComboBox" styleClass="section-combo" />
+    </HBox>
+
+    <TableView fx:id="menuTableView" styleClass="menu-table">
+        <columns>
+            <TableColumn fx:id="nameColumn" styleClass="table-column" text="Item Name" />
+            <TableColumn fx:id="priceColumn" styleClass="table-column" text="Price" />
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT" spacing="20" styleClass="buttonsContainer">
+        <Button fx:id="addButton" stylesheets="@css/menu-popup.css" text="Add to Order" />
+        <Button fx:id="closeButton" styleClass="card-button" text="Close" />
+    </HBox>
+</VBox>

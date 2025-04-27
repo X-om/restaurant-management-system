@@ -1,0 +1,33 @@
+.dashboard-title {
+    -fx-text-fill: #2a4e8a;
+    -fx-font-weight: bold;
+}
+
+.dashboard-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+.card-title {
+    -fx-text-fill: #3a5683;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
+.chart-title {
+    -fx-font-size: 14;
+    -fx-text-fill: #4a4a4a;
+}
+
+.axis-label {
+    -fx-font-size: 12;
+}
+
+.default-color0.chart-pie { -fx-pie-color: #4e79a7; }
+.default-color1.chart-pie { -fx-pie-color: #f28e2b; }
+.default-color2.chart-pie { -fx-pie-color: #e15759; }
+.default-color3.chart-pie { -fx-pie-color: #76b7b2; }
+.default-color4.chart-pie { -fx-pie-color: #59a14f; }

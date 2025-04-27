@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane stylesheets="@css/orders.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.rms.OrderController">
+<StackPane maxHeight="Infinity" maxWidth="Infinity" stylesheets="@css/orders.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.rms.OrderController">
    <children>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1140.0">
+      <VBox maxHeight="Infinity" maxWidth="Infinity">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #4D3F76;">
                <children>
@@ -21,8 +21,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox prefHeight="49.0" style="-fx-background-color: #9FA3A9;" />
-            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS">
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
                <content>
                   <AnchorPane>
                      <children>

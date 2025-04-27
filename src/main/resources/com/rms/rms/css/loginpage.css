@@ -16,13 +16,13 @@
 
     /* Inner Shadow */
     -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.2), 25, 0, 4, 4);
-    -fx-background-radius: 50 ;
+    -fx-background-radius: 50 0 0 50 ;
 }
 
 
 #loginButton {
     -fx-background-color: linear-gradient(to bottom, #7B62CD, #5A47A2); /* Darker gradient */
-    -fx-background-radius: 30; /* Smooth rounded edges */
+    -fx-background-radius: 50; /* Smooth rounded edges */
     -fx-text-fill: white; /* Text color */
     -fx-font-size: 18px;
     -fx-font-weight: bold;
@@ -30,7 +30,7 @@
     -fx-cursor: hand;
     -fx-border-color: rgba(255, 255, 255, 0.3); /* Soft white border */
     -fx-border-width: 2px;
-    -fx-border-radius: 30;
+    -fx-border-radius: 50;
     -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 3);
     -fx-transition: all 0.3s ease-in-out;
 }
@@ -49,3 +49,40 @@
     -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.4), 12, 0, 0, 4);
 }
 
+/* Text Fields Styling */
+#username, #password {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #d1d1d1;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-font-size: 16px;
+    -fx-padding: 15px 20px;
+    -fx-min-height: 55px;  /* Increased height */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 2, 2);
+}
+
+/* Focus State for Text Fields */
+#username:focused, #password:focused {
+    -fx-border-color: #7B62CD;
+    -fx-effect: dropshadow(gaussian, rgba(123,98,205,0.15), 6, 0, 2, 3);
+}
+
+/* Hyperlink Styling */
+#createAccountLink {
+    -fx-text-fill: #5A47A2;
+    -fx-font-size: 14px;
+    -fx-underline: false;
+    -fx-border-color: transparent;
+    -fx-padding: 5px;
+}
+
+/* Hyperlink Hover Effects */
+#createAccountLink:hover {
+    -fx-text-fill: #9074E3;
+    -fx-underline: true;
+}
+
+#createAccountLink:pressed {
+    -fx-text-fill: #3F2B8C;
+}

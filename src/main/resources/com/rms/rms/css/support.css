@@ -1,0 +1,128 @@
+.root {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Header Styles */
+.header-box {
+    -fx-padding: 30 0 20 0;
+    -fx-background-color: linear-gradient(to right, #8589D6, #4D3F76);
+}
+
+.header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.header-subtitle {
+    -fx-text-fill: rgba(255,255,255,0.9);
+    -fx-font-size: 16px;
+}
+
+.header-separator {
+    -fx-padding: 0 100 0 100;
+    -fx-border-color: rgba(255,255,255,0.3);
+}
+
+/* Card Styles */
+.info-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-padding: 25;
+    -fx-spacing: 15;
+    -fx-alignment: TOP_CENTER;
+    -fx-min-width: 300;
+    -fx-min-height: 250;
+}
+
+.form-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-padding: 25;
+    -fx-spacing: 20;
+}
+
+.card-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.card-separator {
+    -fx-padding: 5 0 5 0;
+    -fx-border-color: #e0e0e0;
+}
+
+/* Contact Details */
+.contact-details {
+    -fx-padding: 10 0 0 0;
+}
+
+.contact-text {
+    -fx-text-fill: #555;
+    -fx-font-size: 16px;
+}
+
+/* Help Buttons */
+.help-items {
+    -fx-padding: 10 0 0 0;
+}
+
+.help-button {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-cursor: hand;
+}
+
+.help-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Form Styles */
+.form-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.form-separator {
+    -fx-padding: 5 0 15 0;
+    -fx-border-color: #e0e0e0;
+}
+
+.form-label {
+    -fx-text-fill: #555;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.form-field, .form-textarea {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 4;
+    -fx-font-size: 14px;
+}
+
+.form-field:focused, .form-textarea:focused {
+    -fx-border-color: #3498db;
+}
+
+.submit-button {
+    -fx-background-color: #4D3F76;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 30 10 30;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.submit-button:hover {
+    -fx-background-color: #BDC1FF;
+}

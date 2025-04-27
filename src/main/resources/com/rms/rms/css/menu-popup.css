@@ -1,0 +1,115 @@
+/* Base container styling */
+.popup-container {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 4);
+    -fx-padding: 20;
+    -fx-border-radius: 20;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-min-width: 600;
+    -fx-min-height: 500;
+}
+
+.popup-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4d3f76;
+}
+
+.popup-separator {
+    -fx-padding: 5 0 15 0;
+    -fx-border-color: #e0e0e0;
+}
+
+.section-container {
+    -fx-padding: 0 0 15 0;
+}
+
+.section-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+
+.section-combo {
+    -fx-pref-width: 250;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+    -fx-background-color: white;
+    -fx-border-color: #d0d0d0;
+    -fx-border-radius: 5;
+}
+
+/* Table styling */
+.menu-table {
+    -fx-pref-height: 350;
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 0;
+}
+
+.menu-table .column-header-background {
+    -fx-background-color: #4d3f76;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.menu-table .column-header {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.menu-table .table-row-cell {
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu-table .table-row-cell:odd {
+    -fx-background-color: #ffffff;
+}
+
+.menu-table .table-row-cell:even {
+    -fx-background-color: #f8f8f8;
+}
+
+.menu-table .table-row-cell:selected {
+    -fx-background-color: #e8e0ff;
+    -fx-text-fill: #4d3f76;
+}
+
+.table-column {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 13px;
+}
+
+/* Buttons container */
+.buttonsContainer {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 0;
+    -fx-padding: 15;
+}
+
+/* Card button styling */
+.card-button {
+    -fx-background-color: #4d3f76;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}
+
+.card-button:hover {
+    -fx-background-color: #3d3260;
+}
+
+.card-button:pressed {
+    -fx-background-color: #322752;
+}
+

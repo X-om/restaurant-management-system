@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/23.0.1"
-           xmlns:fx="http://javafx.com/fxml/1">
-   <Label text="Reports">
-      <font>
-         <Font name="Arial Bold Italic" size="72.0" />
-      </font>
-   </Label>
-</StackPane>
+<BorderPane stylesheets="@css/reports.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.rms.ReportController">
+   <top>
+      <Label styleClass="dashboard-title" text="Restaurant Management Dashboard">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+
+   <center>
+      <GridPane gridLinesVisible="false" style="-fx-background-color: #f5f5f5;">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints percentHeight="50" vgrow="ALWAYS" />
+            <RowConstraints percentHeight="50" vgrow="ALWAYS" />
+         </rowConstraints>
+
+         <!-- Card 1: Sales by Category -->
+         <VBox fx:id="card1" styleClass="dashboard-card">
+            <Label styleClass="card-title" text="Sales by Food Category" />
+            <PieChart fx:id="categorySalesChart" legendSide="RIGHT" />
+         </VBox>
+
+         <!-- Card 2: Daily Order Trends -->
+         <VBox fx:id="card2" styleClass="dashboard-card" GridPane.columnIndex="1">
+            <Label styleClass="card-title" text="Daily Order Trends" />
+            <BarChart fx:id="dailyOrdersChart">
+               <xAxis>
+                  <CategoryAxis fx:id="dailyOrdersXAxis" label="Day" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="dailyOrdersYAxis" label="Number of Orders" />
+               </yAxis>
+            </BarChart>
+         </VBox>
+
+         <!-- Card 3: Table Status -->
+         <VBox fx:id="card3" styleClass="dashboard-card" GridPane.rowIndex="1">
+            <Label styleClass="card-title" text="Table Occupancy Status" />
+            <StackedBarChart fx:id="tableStatusChart">
+               <xAxis>
+                  <CategoryAxis fx:id="tableStatusXAxis" label="Status" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="tableStatusYAxis" label="Count" />
+               </yAxis>
+            </StackedBarChart>
+         </VBox>
+
+         <!-- Card 4: Top Selling Items -->
+         <VBox fx:id="card4" styleClass="dashboard-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label styleClass="card-title" text="Top Selling Menu Items" />
+            <BarChart fx:id="topItemsChart">
+               <xAxis>
+                  <CategoryAxis fx:id="topItemsXAxis" label="Menu Item" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="topItemsYAxis" label="Quantity Sold" />
+               </yAxis>
+            </BarChart>
+         </VBox>
+      </GridPane>
+   </center>
+
+</BorderPane>
